@@ -1,0 +1,34 @@
+body {
+	background-color: #5FC7FD;
+}
+
+.header {
+	width: 1824 px;
+	height: 108 px;
+	background-color: #4D4D4D;
+}
+
+.menu {
+	background-color: #5FC7FD;
+	width: 98 px;
+	height: 100%;
+	color: #4D4D4D;
+	position: fixed;
+	padding: 10px 0px 10px 16px;
+	margin-top: -10px;
+}
+
+.middle {
+	margin: 0 auto;
+	width: 50%;
+	height: 50%;
+}
+
+ul {
+	border-right: 4px solid black;
+	list-style-type: none;
+}
+
+.dropdown-menu {
+	border: 0px;
+}

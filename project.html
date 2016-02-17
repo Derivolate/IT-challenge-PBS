@@ -36,63 +36,30 @@
 				</table>
 				Functie(s)
 				<table>
-				<tr><td>Functie</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td><input type="text" list="functies" id="functie"></td><td><input type="date" id="fstart"></td><td><input type="date" id="feind"></td></tr>
+				<tr><td>Omschrijving v/d werkzaamheden</td></tr>
+				<tr><td><input type="text" id="wheid"></td></tr>
 				</table>
-				<tr><td>Gevraagde vaardigheden</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="text" id="vheid"></td><td><input type="number" min="0" max="100" step="1" value="0" id="vyear"></td><td><input type="month" id="vstart"></td><td><input type="month" id="veind"></td></tr>
+				<table>
+				<tr><td>Gevraagde vaardigheden</td></tr>
+				<tr><td><input type="text" list="vheden" id="vheid"></td></tr>
+				<tr><td><button type="button">+</button></td></tr>
 				</table>
 				<table>
 				<tr><td>Gevraagde skills</td></tr>
-				<tr><td>1:</td><td><input type="text" list="skills" id="skill"></td></tr>
+				<tr><td><input type="text" list="skills" id="skill"></td></tr>
 				<tr><td><button type="button">+</button></td></tr>
 				</table>
 				<table>
-				<tr><td>Opleidingen</td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr>
-				<tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>
+				<tr><td>Functie omvang</td></tr>
+				<tr><td>Fulltime</td><td><input type="radio" id="dienst" value="ftime"></td></tr>
+				<tr><td>Parttime</td><td><input type="radio" id="dienst" value="ptime"></td></tr>
+				<tr><td>Aantal uren</td><td><input type="number" min="0" max="100" step="1" value="20" id="uren"></td></tr>
 				<tr><td><button type="button">+</button></td></tr>
 				</table>
-				<table>
-				<tr><td>Cursussen</td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Omschrijving</td><td>Diploma</td><td>Jaar</td></tr>
-				<tr><td>1:</td><td><input type="month" id="cstart"></td><td><input type="month" id="ceind"></td><td><input list="opleidingen" id="copleiding"></td><td><input list="omschrijvingen" id="omschrijving"></td><td>Ja:<input type="radio" id="cdiplo" value="ja">Nee:<input type="radio" id="cdiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="cyear"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Vaardigheden</td><td>Vaardigheid</td><td>Jaren ervaring</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="text" id="vheid"></td><td><input type="number" min="0" max="100" step="1" value="0" id="vyear"></td><td><input type="month" id="vstart"></td><td><input type="month" id="veind"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Certificaten</td><td>Naam/omschrijving</td><td>Jaar</td></tr>
-				<tr><td>1:</td><td><input type="text" id="certi"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="ceyear"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Skills</td></tr>
-				<tr><td>1:</td><td><input type="text" list="skills" id="skill"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Hobby's</td></tr>
-				<tr><td>1:</td><td><input type="text" list="hobbys" id="hobby"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Beschikbaar</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="date" id="bstart"></td><td><input type="date" id="beind"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Niet beschikbaar</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="date" id="nbstart"></td><td><input type="date" id="nbeind"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Prijs p/u:</td><td><input type="text" id="prijs"></td></tr>		
-				<tr><td>Prijsklasse p/u:</td><td><input type="text" id="pklasse"></td></tr>		
-				<tr><td>Gewenste Bruto maandsalaris:</td><td><input type="text" id="brutom"></td></tr>		
-				<tr><td>Gewenste Bruto jaarsalaris:</td><td><input type="text" id="brutoj"></td></tr>		
-				</table>
+				Startdatum
+				<input type="date" id="sdatum">
+				Einddatum
+				<input type="date" id="edatum">
 				<button type="button">Bestand toevoegen</button><button type="button">Opslaan</button>
 		</div>
 		<div class="bottom">

@@ -1,18 +1,30 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+ var express =      require('express');
+ var server  =      express();
+ var ejs = require('ejs'); 
+ ejs.open = '{{'; 
+ ejs.close = '}}';
 
-app.use(express.static(__dirname + '/public'));
+ server.use(express.compress());
 
-app.listen(process.env.PORT || 3000);
+ server.configure(function(){
+   server.set("view options", {layout: false});  
+   server.engine('html', require('ejs').renderFile); 
+   server.use(server.router);
+   server.set('view engine', 'html');
+   server.set('views', __dirname + "/www");
+ });
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+ server.all("*", function(req, res, next) {
+     var request = req.params[0];
+
+         if((request.substr(0, 1) === "/")&&(request.substr(request.length - 4) === "html")) {
+         request = request.substr(1);
+         res.render(request);
+     } else {
+         next();
+     }
+
+ });
+
+ server.use(express.static(__dirname + '/www'));

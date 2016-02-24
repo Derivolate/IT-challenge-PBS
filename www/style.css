@@ -8,7 +8,7 @@ body {
 	background-color: #4D4D4D;
 }
 
-.menu {
+.left-sidebar {
 	background-color: #5FC7FD;
 	width: 98 px;
 	height: 100%;
@@ -19,7 +19,7 @@ body {
 	margin-left: -110px;
 }
 
-.menu a {
+.left-sidebar a {
 	float: right;
 	text-align: left;
 	color: #4D4D4D;
@@ -28,7 +28,7 @@ body {
 	text-decoration: none;
 }
 
-.middle {
+.body {
 	margin: 0 auto;
 	width: 50%;
 	height: 50%;

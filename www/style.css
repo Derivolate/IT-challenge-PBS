@@ -10,7 +10,7 @@ body {
 
 .left-sidebar {
 	background-color: #5FC7FD;
-	width: 98 px;
+	width: 134px;
 	height: 100%;
 	color: #4D4D4D;
 	position: fixed;
@@ -26,6 +26,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;  
 	text-decoration: none;
+	align: left;
 }
 
 .body {

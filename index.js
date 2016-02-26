@@ -5,8 +5,11 @@ var io = require('socket.io')(http);
 
  app.use(express.static(__dirname + '/www'));
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+  socket.on('zoek', function(msg){
+    socket.emit('zoek', msg);
+  });
+  socket.on('pform', function(msg){
+    console.log("swek ingestuurd")
   });
 });
 

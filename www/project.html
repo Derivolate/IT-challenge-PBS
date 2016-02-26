@@ -17,20 +17,37 @@
 	  </div>
 
 		<div class="body">
+				<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+				<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+				<script>
+				  var socket = io();
+				  
+				  var Projectform = {
+					ID:$('#Pid').val(),
+					naam:$('#pnaam').val()
+					};
+				  
+				  $('#save').click(function(){
+					socket.emit('pform', Projectform);
+					//HOUD JE GVD JE BEK NOU
+					return false;
+				  });
+				</script>
+				
 				+ Project <br/>
 				<table>
-				<tr><td>Project ID:</td><td><input type="text" id="id"></td></tr>
+				<tr><td>Project ID:</td><td><input type="text" id="Pid"></td></tr>
 				<tr><td>Projectnaam:</td><td><input type="text" id="pnaam"></td></tr>
-				<tr><td>Omschrijving:</td><td><input type="text" id="omschrijving"></td></tr>				
-				<tr><td>Plaats:</td><td><input list="plaatsen" id="plaats"></td></tr>
+				<tr><td>Omschrijving:</td><td><input type="text" id="pomschrijving"></td></tr>				
+				<tr><td>Plaats:</td><td><input list="plaatsen" id="pplaats"></td></tr>
 				</table>
 				<table>
 				<tr><td>Startdatum</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td></td><td><input type="date" id="sstart"></td><td><input type="date" id="seind"></td></tr>
+				<tr><td></td><td><input type="date" id="pstart"></td><td><input type="date" id="seind"></td></tr>
 				</table>
 				<table>
 				<tr><td>Einddatum</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td></td><td><input type="date" id="estart"></td><td><input type="date" id="eeind"></td></tr>
+				<tr><td></td><td><input type="date" id="peind"></td><td><input type="date" id="eeind"></td></tr>
 				</table>
 				Functie(s)
 				<table>
@@ -53,7 +70,7 @@
 				<tr><td><input type="date" id="edatum"></td></tr>
 				<tr><td><button type="button">+</button></td></tr>
 				</table>
-				<button type="button">Bestand toevoegen</button><button type="button">Opslaan</button>
+				<button type="button">Bestand toevoegen</button><button id="save">Opslaan</button>
 		</div>
 		<div class="bottom">
 			<div class="container">

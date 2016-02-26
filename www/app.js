@@ -1,19 +1,25 @@
+var position = 0;
 var main = function() {
   /* Push the body and the nav over by 285px over */
+  if (position = 0){
   $('.icon-menu').click(function() {
-    $('.left-sidebar').animate({
+    position = 1;
+	$('.left-sidebar').animate({
       left: "105px"
     }, 200);
 
   });
-
+};
+els{
   /* Then push them back */
-  $('.icon-close').click(function() {
-    $('.left-sidebar').animate({
+  $('.icon-menu').click(function() {
+    position = 0;
+	$('.left-sidebar').animate({
       left: "8px"
     }, 200);
 
   });
+ };
 };
 
 

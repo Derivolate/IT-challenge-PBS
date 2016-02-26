@@ -4,7 +4,6 @@
 	<link rel='stylesheet' href='style.css'/>
   </head>
   <body>
-
         <ul class="left-sidebar">
 			<li><a href="#"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png" class="icon-close"><img src="images/menu.jpg"/ class="icon-menu"></a></li>
 			<li><a href="index.html">Home<img src="images/home.jpg"/></a></li>
@@ -17,7 +16,7 @@
 				<button type="button">Projects</button>
 				<button type="button">Resources</button><br/>
 				<form action="">
-					<input id="m" autocomplete="off" /><button>Tonen</button>
+					<input id="m" autocomplete="off" /><input type="submit">Tonen</button>
 				</form>
 				<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 				<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -29,13 +28,14 @@
 					return false;
 				  });
 				  socket.on('chat message', function(msg){
-					$('#messages').append($('<li>').text(msg));
+					$('#result').append($('<li>').text(msg));
 				  });
 				</script>
 				<button type="button">Aantal records</button><br/>	
 				<button type="button">Filter</button>
 		</div>
 		<div class="bottom">
+			<ul id="result"></ul>
 			<div class="container">
 			</div>
 		</div>

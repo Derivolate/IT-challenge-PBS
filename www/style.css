@@ -11,6 +11,15 @@ body {
 	margin-left: -10px;
 }
 
+.logos {
+	margin-left: 45%;
+}
+
+.logos img {
+	padding: 10px;
+	margin-top: 15px;
+}
+
 .left-sidebar {
 	background-color: #5FC7FD;
 	width: 135px;
@@ -20,6 +29,8 @@ body {
 	padding: 10px 0px 10px 16px;
 	margin-top: 0px;
 	margin-left: -110px;
+	border-right: 4px solid black;
+	list-style-type: none;
 }
 
 .left-sidebar a {
@@ -32,16 +43,13 @@ body {
 }
 
 .body {
-	margin: 0 auto;
+	padding: 200px;
 	width: 50%;
 	height: 50%;
 }
 
-ul {
-	border-right: 4px solid black;
-	list-style-type: none;
-}
-
-.dropdown-menu {
+button {
 	border: 0px;
+	background-color: black;
+	color: white;
 }

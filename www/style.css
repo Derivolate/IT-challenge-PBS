@@ -20,15 +20,21 @@ body {
 	margin-top: 15px;
 }
 
+.inlog {
+	float: right;
+	margin-top: -30px;
+	margin-right: 50px;
+}
+
 .header a {
+	margin: 0px 20px;
 	border: 1px solid black;
+	padding: 10px 20px;
 	float: right;
 	text-decoration: none;
 	color: #00353F;
-	margin-right: 100px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
-	
 }	
 
 .left-sidebar {

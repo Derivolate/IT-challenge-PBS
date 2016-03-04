@@ -60,14 +60,14 @@ body {
 .body {
 	border: 3px solid #00353F;
 	padding: 40px;
-	margin-left: 41%;
+	margin-left: 30%;
 	margin-top: 100px;
-	width: 900px;
+	width: 750px;
 }
 
 button {
 	width: 50px;
-	height: 47px;
+	height: 46px;
 	border: 0px;
 	background-color: #BCBABE;
 	color: grey;
@@ -80,6 +80,11 @@ button:hover {
 }
 
 #m {
+	position: fixed;
 	height: 40px;
 	width: 638px;
+}
+
+#search {
+	margin-left: 642px;
 }

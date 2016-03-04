@@ -1,12 +1,12 @@
 body {
-	background-color: #7FE7FF;
+	background-color: #F1F1F2;
 }
 
 .header {
-	background-color: #5FCFFF;
+	background-color: #A1D6E2;
 	width: 102%;
 	height: 100px;
-	border-bottom: 4px solid #555555;
+	border-bottom: 4px solid #00353F;
 	margin-top: -10px;
 	margin-left: -10px;
 }
@@ -21,36 +21,44 @@ body {
 }
 
 .header a {
+	border: 1px solid black;
+	float: right;
 	text-decoration: none;
-	color: #4D4D4D;
-	position: fixed;
+	color: #00353F;
 	margin-right: 100px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	
 }	
 
 .left-sidebar {
-	background-color: #5FC7FD;
+	background-color: #1995AD;
 	width: 135px;
 	height: 100%;
-	color: #4D4D4D;
+	color: #00353F;
 	position: fixed;
 	padding: 10px 0px 10px 16px;
 	margin-top: 0px;
 	margin-left: -110px;
-	border-right: 4px solid #555555;
+	border-right: 4px solid #00353F;
 	list-style-type: none;
 }
 
 .left-sidebar a {
 	float: right;
 	text-align: left;
-	color: #4D4D4D;
+	color: #00353F;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;  
 	text-decoration: none;
 }
 
+.left-sidebar img {
+	width: 48px;
+}
+
 .body {
-	border: 3px solid grey;
+	border: 3px solid #00353F;
 	padding: 40px;
 	margin-left: 41%;
 	margin-top: 100px;
@@ -65,12 +73,14 @@ body {
 button {
 	padding: 3px 10px;
 	border: 0px;
-	background-color: #CEEEFE;
+	background-color: #BCBABE;
 	color: grey;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;  
 }
 
 button:hover {
-	border: 1px solid grey;
+	border: 1px solid #00353F;
 }
 
 #m {

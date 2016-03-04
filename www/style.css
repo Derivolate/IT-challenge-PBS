@@ -50,6 +50,11 @@ body {
 	width: 220px;
 }
 
+#m img {
+	height: 20 px;
+	width: 20 px;
+}
+
 button {
 	padding: 3px 10px;
 	border: 0px;
@@ -58,5 +63,5 @@ button {
 }
 
 button:hover {
-	border; 1px solid grey;
+	border: 1px solid grey;
 }

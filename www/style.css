@@ -70,14 +70,10 @@ button {
 }
 
 button:hover {
-<<<<<<< Updated upstream
 	border: 1px solid grey;
-}
-=======
-	border; 1px solid grey;
 }
 
 #m {
 	height: 40px;
 	width: 638px;
->>>>>>> Stashed changes
+}

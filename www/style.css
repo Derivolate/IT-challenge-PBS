@@ -20,6 +20,13 @@ body {
 	margin-top: 15px;
 }
 
+.header a {
+	text-decoration: none;
+	color: #4D4D4D;
+	position: fixed;
+	margin-right: 100px;
+}	
+
 .left-sidebar {
 	background-color: #5FC7FD;
 	width: 135px;
@@ -44,7 +51,7 @@ body {
 
 .body {
 	border: 3px solid grey;
-	padding: 10px;
+	padding: 40px;
 	margin-left: 41%;
 	margin-top: 100px;
 	width: 220px;
@@ -63,5 +70,14 @@ button {
 }
 
 button:hover {
+<<<<<<< Updated upstream
 	border: 1px solid grey;
 }
+=======
+	border; 1px solid grey;
+}
+
+#m {
+	height: 40px;
+	width: 638px;
+>>>>>>> Stashed changes

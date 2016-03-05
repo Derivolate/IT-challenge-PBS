@@ -3,10 +3,10 @@ body {
 }
 
 .header {
-	background-color: #A1D6E2;
+	background-color: #2D3C40;
 	width: 102%;
 	height: 100px;
-	border-bottom: 4px solid #00353F;
+	border-bottom: 8px solid #608087;
 	margin-top: -10px;
 	margin-left: -10px;
 }
@@ -32,13 +32,13 @@ body {
 	padding: 10px 20px;
 	float: right;
 	text-decoration: none;
-	color: #00353F;
+	color: #899496;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 }	
 
 .left-sidebar {
-	background-color: #1995AD;
+	background-color: #608087;
 	width: 135px;
 	height: 100%;
 	color: #00353F;
@@ -46,7 +46,7 @@ body {
 	padding: 10px 0px 10px 16px;
 	margin-top: 0px;
 	margin-left: -110px;
-	border-right: 4px solid #00353F;
+	border-right: 2px solid #3E5257;
 	list-style-type: none;
 }
 

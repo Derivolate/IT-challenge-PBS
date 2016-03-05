@@ -28,22 +28,41 @@
 				<button type="button" class="pr">Projects</button>
 				<button type="button" class="pr">Resources</button><br/>
 				<form action="">
-					<input id="m" autocomplete="off" /><button id="search"><img src="images/search.svg"/></button><button id="filtr"><img src="images/filter.svg"/></button>
+					<input id="m" type="text" oninput="update()" autocomplete="off" /><button id="search"><img src="images/search.svg"/></button><button id="filtr"><img src="images/filter.svg"/></button>
 				</form>
 				<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 				<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 				<script>
 				  var socket = io();
+				  function update(){
+					var query = $('#m').val();
+					if (query){
+						socket.emit('zoek', query);
+					}
+					else{
+						$('#results').empty();
+					}
+				  }
 				  $('form').submit(function(){
-					socket.emit('chat message', $('#m').val());
+					socket.emit('zoek', $('#m').val());
 					$('#m').val('');
 					return false;
 				  });
-				  socket.on('chat message', function(msg){
-					$('#messages').append($('<li>').text(msg));
+				  socket.on('zoek', function(msg){
+					var reslist = $('#results');
+					reslist.empty();
+					var item = 0;
+					for (item in msg){
+						if (item >= 10){
+							break;
+						}
+						reslist.append($('<tr>').text(msg[item].job));
+					}
+					reslist.append($('<tr>').text(msg.length + " records in totaal"));
 				  });
 				</script>
-				<button type="button">Aantal records</button><br/>	
+				<table id="results" style="list-style-type:none" /><br/>
+				<button type="button">Aantal records</button>
 		</div>
 		<div class="bottom">
 			<div class="container">

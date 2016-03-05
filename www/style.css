@@ -63,12 +63,41 @@ body {
 	width: 48px;
 }
 
+body#background-pr {
+  background: url('images/bg-projects.jpg') no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+
+body#background-rc {
+  background: url('images/bg-resources.jpg') no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+
 .body {
+	background-color: #999999;
 	border: 3px solid #00353F;
 	padding: 40px;
 	margin-left: 30%;
 	margin-top: 100px;
 	width: 750px;
+}
+
+.pr	{
+	width: 100px;
+	height: 46px;
+	border: 0px;
+	background-color: #BCBABE;
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;  
 }
 
 button {
@@ -78,6 +107,7 @@ button {
 	background-color: #BCBABE;
 	color: grey;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 	font-size: 16px;  
 }
 
@@ -86,6 +116,7 @@ button:hover {
 }
 
 #m {
+    font-size:24px;
 	position: fixed;
 	height: 40px;
 	width: 638px;

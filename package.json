@@ -8,7 +8,8 @@
     "compression": "^1.6.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "socketio": "^1.0.0"
+    "socketio": "^1.0.0",
+    "mysql": "^2.10.2"
   },
   "devDependencies": {},
   "scripts": {

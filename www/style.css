@@ -71,6 +71,14 @@ body#background-pr {
   -webkit-background-size: cover;
 }
 
+body#background-ppr {
+  background: url('images/bg-projectpage.jpg') no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
 
 body#background-rc {
   background: url('images/bg-resources.jpg') no-repeat 50% 50% fixed; 

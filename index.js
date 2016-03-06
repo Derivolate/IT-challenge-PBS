@@ -18,7 +18,8 @@ db.connect(function(err){
 app.use(express.static(__dirname + '/www'));
 io.on('connection', function(socket){
   socket.on('zoek', function(msg){
-	var search = "SELECT job FROM jobs WHERE job LIKE '%" + msg + "%';";
+	msg = msg.replace("?", "").replace("'", "''").replace("%", "");
+	var search = "SELECT job FROM jobs WHERE job LIKE '%" + msg + "%' ORDER BY CASE WHEN job LIKE '" + msg + "%' THEN 0 ELSE 1 END, job;";
 	db.query(search, function(err, rows){
 		if (err) throw err;
 		socket.emit('zoek', rows);
@@ -42,4 +43,3 @@ io.on('connection', function(socket){
 http.listen(50002, function(){
   console.log('listening on *:50002');
 });
-

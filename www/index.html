@@ -28,7 +28,9 @@
 				<button type="button" class="pr" id="pr" onclick="changeIDpr()">Projects</button>
 				<button type="button" class="pr" id="rc" onclick="changeIDrc()">Resources</button><br/>
 				<form action="">
-					<input id="m" type="text" oninput="update()" autocomplete="off" /><button id="search"><img src="images/search.svg"/></button><button id="filtr"><img src="images/filter.svg"/></button>
+					<input id="m" type="text" oninput="update()" autocomplete="off" />
+					<button id="search"><img src="images/search.svg"/></button>
+					<button id="filtr"><img src="images/filter.svg"/></button>
 				</form>
 				<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 				<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -40,7 +42,7 @@
 						socket.emit('zoek', query);
 					}
 					else{
-						$('#results').empty();
+						$('#suggestions').empty();
 					}
 				  }
 				  $('form').submit(function(){
@@ -49,19 +51,24 @@
 					return false;
 				  });
 				  socket.on('zoek', function(msg){
-					var reslist = $('#results');
+					var reslist = $('#suggestions');
 					reslist.empty();
 					var item = 0;
 					for (item in msg){
 						if (item >= 10){
 							break;
 						}
-						reslist.append($('<tr>').text(msg[item].job));
+						reslist.append($('<button type="button" id="suggestion" class="pr" onclick="sugclick(this)">').text(msg[item].job));
 					}
 					reslist.append($('<tr>').text(msg.length + " records in totaal"));
 				  });
+				  function sugclick(item){
+				  	$('#m').val(item.innerHTML);
+				  }
 				</script>
-				<table id="results" style="list-style-type:none" /><br/>
+				<form id="sugform" action="">
+					<table id="suggestions" /><br/>
+				</form>
 				<button type="button" class="pr">Aantal records</button>
 		</div>
 		<div class="bottom">

@@ -116,12 +116,23 @@ button:hover {
 }
 
 #m {
-    font-size:24px;
-	position: fixed;
+	font-size:24px;
 	height: 40px;
 	width: 638px;
+	position: fixed;
 }
 
 #search {
 	margin-left: 642px;
+}
+
+#suggestion {
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #EEEEEE;
+	width: 638px;
+}
+
+#suggestion:hover {
+	background-color: #CCCCCC;
 }

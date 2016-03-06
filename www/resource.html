@@ -2,16 +2,28 @@
 <html>
   <head>
 	<link rel='stylesheet' href='style.css'/>
-  </head>
-  <body>
 
+  </head>
+  <body id="background-prc" onload="insertText();">
+		
+		 <div class="header">
+			<div class="logos">
+			<img src="images/kinsley.png"/>
+			</div>
+			<div class="inlog">
+			<a href="login.html">Login</a>
+			<a href="register.html">Register</a>
+			</div>
+		</div>
+		
         <ul class="left-sidebar">
-			<li><a href="#"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png" class="icon-close"><img src="images/menu.jpg"/ class="icon-menu"></a></li>
-			<li><a href="index.html">Home<img src="images/home.jpg"/></a></li>
-			<li><a href="project.html">Project<img src="images/project.jpg"/></a></li>
-			<li><a href="resource.html">Resource<img src="images/resource.jpg"/></a></li>
-			<li><a href="settings.html">Instellingen<img src="images/settings.jpg"/></a></li>			
+			<li><a href="#"><img src="images/menu.svg"/ class="icon-menu"></a></li>
+			<li><a href="index.html">Home<img src="images/home.svg"/></a></li>
+			<li><a href="project.html">Project<img src="images/project.svg"/></a></li>
+			<li><a href="resource.html">Resource<img src="images/resource.svg"/></a></li>
+			<li><a href="settings.html">Settings<img src="images/settings.svg"/></a></li>			
         </ul>
+
 
 		<div class="body">
 				+ Resource <br/>
@@ -44,10 +56,17 @@
 				<tr><td>Auto:</td><td><input type="text" id="rau"></td></tr>
 				</table>
 				Functie(s)
-				<table>
+				<table id="functies-table">
 				<tr><td>1:</td><td><input type="text" list="functies" id="functie"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
 				</table>
+				<table>
+				<tr><td><button type="button" onclick='$("<tr><td id=\"td1\">&nbsp;</td><td><input type=\"text\" id=\"fucntie\"/></td></tr>").appendTo($("#functies-table")); return false;'>+</button></td></tr>
+				</table>
+				<script>
+					function insertText () {
+						document.getElementById('td1').innerHTML = "some text to enter";
+					}
+				</script>
 				<table>
 				<tr><td>Opleidingen</td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr>
 				<tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>

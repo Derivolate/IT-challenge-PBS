@@ -47,7 +47,7 @@ http.listen(50002, function() {
 
 io.on('connection', function(socket){
   socket.on('zoek', function(msg){
-	msg = getSafeQuery(inputquery);
+	msg = getSafeQuery(msg);
 	var search = "SELECT job FROM jobs WHERE job LIKE '%" + msg + "%' ORDER BY CASE WHEN job LIKE '" + msg + "%' THEN 0 ELSE 1 END, job;";
 	db.query(search, function(err, rows){
 		if (err) throw err;

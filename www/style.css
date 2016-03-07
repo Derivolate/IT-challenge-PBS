@@ -147,3 +147,13 @@ button:hover {
 #search {
 	margin-left: 642px;
 }
+
+#suggestion {
+	width: 638px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#suggestion:hover {
+	background-color: #EEEEEE;
+}

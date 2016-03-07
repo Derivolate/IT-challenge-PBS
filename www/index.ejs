@@ -40,7 +40,7 @@
                     if (query) {
                         socket.emit('zoek', query);
                     } else {
-                        $('#results').empty();
+                        $('#suggestions').empty();
                     }
                 }
                 $('form').submit(function() {
@@ -49,19 +49,19 @@
                     return false;
                 });
                 socket.on('zoek', function(msg) {
-                    var reslist = $('#results');
+                    var reslist = $('#suggestions');
                     reslist.empty();
                     var item = 0;
                     for (item in msg) {
                         if (item >= 10) {
                             break;
                         }
-                        reslist.append($('<tr>').text(msg[item].job));
+                        reslist.append($('<button type="button" id="suggestion" class="pr">').text(msg[item].job));
                     }
                     reslist.append($('<tr>').text(msg.length + " records in totaal"));
                 });
             </script>
-            <table id="results" style="list-style-type:none" />
+            <table id="suggestions" />
             <br/>
             <button type="button" class="pr">Aantal records</button>
         </div>

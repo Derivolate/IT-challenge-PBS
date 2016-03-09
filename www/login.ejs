@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <% include partials/head %>
+
+    <body id="background-pr">
+    
+        <% include partials/header %>
+
+        <% include partials/sidebar %>
+	
+        <div class="body">
+            <table>
+                <tr>
+                <td>Log hier in met uw gebruikersnaam en wachtwoord</td></tr>
+                <tr>
+                    <td>Gebruikersnaam:</td>
+                    <td><input type="text" id="username"></td>
+                </tr>
+                <tr>
+                    <td>Wachtwoord:</td>
+                    <td><input type="text" id="password"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="loginbtn">Log in</button>
+                    </td>
+                    <td>
+                        <button id="wwverg">Wachtwoord vergeten</button>
+                    </td>
+                    <td>
+                </tr>
+                <tr>
+                    <td>
+                        Nog geen account?
+                        <form action="register" class =>
+                            <input type="submit" value="Registreren">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bottom">
+            <div class="container">
+            </div>
+        </div>
+    </body>
+</html>

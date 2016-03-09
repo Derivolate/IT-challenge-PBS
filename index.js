@@ -40,10 +40,17 @@ app.get('/resultaten', function(req, res) {
 });
 app.get('/results', function(req, res) {
     res.render('../www/results');
+app.get('/login', function(req, res) {
+    res.render('../www/login');
+});
+app.get('/register', function(req, res) {
+    res.render('../www/register');
+});
 });
 http.listen(50002, function() {
     console.log('listening on *:50002');
 });
+
 
 io.on('connection', function(socket){
   socket.on('zoek', function(msg){

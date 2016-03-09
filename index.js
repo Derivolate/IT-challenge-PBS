@@ -29,8 +29,8 @@ app.get('/', function(req, res) {
 app.get('/index', function(req, res) {
     res.render('../www/index');
 });
-app.get('/projects', function(req, res) {
-    res.render('../www/projects');
+app.get('/project', function(req, res) {
+    res.render('../www/project');
 });
 app.get('/resource', function(req, res) {
     res.render('../www/resource');

@@ -2,3 +2,4 @@
 node.exe
 npm.cmd
 cmd.exe
+*.bat

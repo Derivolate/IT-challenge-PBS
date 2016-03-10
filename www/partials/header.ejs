@@ -3,7 +3,41 @@
             <img src="images/kinsley.png" />
         </div>
         <div class="inlog">
-            <a href="login">Login</a>
+            <a href="login" id="login" onclick="onClick()">Login</a>
             <a href="register">Register</a>
         </div>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script>
+			var socket = io();
+			var loggedIn = false;
+			var userId = localStorage.getItem("userId");
+			if (userId !== null){
+				socket.emit('is_ingelogd', userId);
+			}
+			
+			function onClick(){
+				if (loggedIn){
+					socket.emit('logout', userId);
+					localStorage.setItem("userId", null);
+				}
+			}
+			
+			function updateBtnText(loginStatus){
+				loggedIn = loginStatus;
+				
+				var btnText = '';
+				if (loginStatus){
+					btnText = 'Logout';
+				}
+				else{
+					btnText = 'Login';
+				}
+				document.getElementById("login").text = btnText;
+			}
+			
+			socket.on('ingelogd', function(loginStatus) {
+				updateBtnText(loginStatus);
+			});
+		</script>
     </div>

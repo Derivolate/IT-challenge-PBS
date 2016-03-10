@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <button id="loginbtn">Log in</button>
+                        <button id="registerbtn" onclick="onRegister()">Registreer</button>
                     </td>
                     <td>
                         <button id="wwverg">Wachtwoord vergeten</button>
@@ -38,6 +38,20 @@
                     </td>
                 </tr>
             </table>
+			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+            <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+			<script>
+                var socket = io();
+
+                function onRegister(){
+					var credentials = {username:$('#username').val(), password:$('#password').val()};
+					socket.emit('registreer', credentials);
+                }
+				
+                socket.on('registreer', function(msg) {
+                    $('#username').val(msg);
+                });
+            </script>
         </div>
         <div class="bottom">
             <div class="container">

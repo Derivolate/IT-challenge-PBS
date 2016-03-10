@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <button id="loginbtn">Log in</button>
+                        <button id="loginbtn" onclick="onLogin()">Log in</button>
                     </td>
                     <td>
                         <button id="wwverg">Wachtwoord vergeten</button>
@@ -38,6 +38,21 @@
                     </td>
                 </tr>
             </table>
+			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+            <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+            <script>
+                var socket = io();
+
+                function onLogin(){
+					var credentials = {username:$('#username').val(), password:$('#password').val()};
+					socket.emit('login', credentials);
+                }
+				
+                socket.on('login', function(userId) {
+					localStorage.setItem("userId", userId);
+					updateBtnText(true);
+                });
+            </script>
         </div>
         <div class="bottom">
             <div class="container">

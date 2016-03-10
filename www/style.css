@@ -4,8 +4,8 @@
 	left:0; 
 	background-color: #2D3C40;
 	width: 100%;
-	height: 100px;
-	border-bottom: 8px solid #608087;
+	height: 90px;
+	border-bottom: 2px solid #00353F;
 	margin-top: -10px;
 }
 
@@ -22,7 +22,7 @@ body {
 .logos img {
 	padding: 10px;
 	margin-top: 5px;
-	max-width: 240px;
+	max-width: 200px;
 }
 
 .inlog {
@@ -33,14 +33,18 @@ body {
 
 .header a {
 	margin: 0px 20px;
-	border: 1px solid black;
-	padding: 10px 20px;
+	padding: 15px 20px;
 	float: right;
 	text-decoration: none;
 	color: #899496;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
-}	
+    font-weight: bold;
+}
+
+.header a:hover {
+    color: #00ABC9;
+}
 
 .left-sidebar {
 	background-color: #608087;
@@ -49,7 +53,7 @@ body {
 	color: #00353F;
 	position: fixed;
 	padding: 5px 0px 10px 16px;
-	margin-top: -140px;
+	margin-top: -156px;
 	margin-left: -110px;
 	border-right: 2px solid #3E5257;
 	list-style-type: none;
@@ -135,6 +139,7 @@ button {
 
 button:hover {
 	border: 1px solid #00353F;
+    color: #2D3C40;
 }
 
 #m {

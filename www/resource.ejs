@@ -10,7 +10,12 @@
 
 		<div class="body">
 				+ Resource <br/>
-				<table>
+				<div class="article current">
+                    <div class="item">
+                    NAW
+                    </div>
+                    <div class="description">
+                <table>
 				<tr><td>Achternaam:</td><td><input type="text" id="ran"></td></tr> 
 				<tr><td>Voorvoegsels:</td><td><input type="text" id="rvv"></td></tr> 
 				<tr><td>Voorletters:</td><td><input type="text" id="rvl"></td></tr>				
@@ -38,8 +43,14 @@
 				<tr><td>Rijbewijs:</td><td><input type="text" id="rrb"></td></tr>
 				<tr><td>Auto:</td><td><input type="text" id="rau"></td></tr>
 				</table>
+                </div>
+                </div>
+                <div class="article">
+                <div class="item">
 				Functie(s)
-				<table id="functies-table">
+                </div>
+                <div class="description">    
+				<table id="functies-table" class="article">
 				<tr><td><input type="text" list="functies" id="functie"></td></tr>
 				</table>
 				<table>
@@ -50,6 +61,8 @@
 						document.getElementById('td1').innerHTML = "some text to enter";
 					}
 				</script>
+                </div>
+                </div>
 				<table>
 				<tr><td>Opleidingen</td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr>
 				<tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>

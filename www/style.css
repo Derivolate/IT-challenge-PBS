@@ -2,10 +2,10 @@
 	position:fixed;
 	top:0;
 	left:0; 
-	background-color: #2D3C40;
+	background-color: deepskyblue;
 	width: 100%;
-	height: 90px;
-	border-bottom: 2px solid #00353F;
+	height: 110px;
+	border-bottom: 2px solid black;
 	margin-top: -10px;
 }
 
@@ -27,8 +27,12 @@ body {
 
 .inlog {
 	float: right;
-	margin-top: -75px;
-	margin-right: 50px;
+	margin-top: -45px;
+	margin-right: 30px;
+}
+
+#login {
+    margin-left: -20px;
 }
 
 .header a {
@@ -43,19 +47,18 @@ body {
 }
 
 .header a:hover {
-    color: #00ABC9;
+    color: dimgrey;
 }
 
 .left-sidebar {
-	background-color: #608087;
+	background-color: skyblue;
 	width: 135px;
 	height: 100%;
 	color: #00353F;
 	position: fixed;
 	padding: 5px 0px 10px 16px;
-	margin-top: -156px;
+	margin-top: -136px;
 	margin-left: -110px;
-	border-right: 2px solid #3E5257;
 	list-style-type: none;
 }
 
@@ -100,8 +103,7 @@ body#background-rc {
 
 
 .body { 
-	background-color: #999999;
-	border: 3px solid #00353F;
+	background-color: rgba(30, 144, 255, 0.38);
 	padding: 40px;
 	margin-left: 30%;
 	margin-top: 238px;
@@ -120,8 +122,6 @@ body#background-rc {
 	width: 100px;
 	height: 46px;
 	border: 0px;
-	background-color: #BCBABE;
-	color: black;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;  
 }
@@ -130,16 +130,16 @@ button {
 	width: 50px;
 	height: 46px;
 	border: 0px;
-	background-color: #BCBABE;
-	color: grey;
+	background-color: skyblue;
+	color: dimgrey;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 16px;  
 }
 
 button:hover {
-	border: 1px solid #00353F;
-    color: #2D3C40;
+    color: black;
+    border: 1px solid rgba(0,0,0, 0.5);
 }
 
 #m {
@@ -151,6 +151,14 @@ button:hover {
 
 #search {
 	margin-left: 642px;
+}
+
+#search:hover {
+    border: 1px solid rgba(0,0,0, 0.5);
+}
+
+#filtr:hover {
+    border: 1px solid rgba(0,0,0, 0.5);
 }
 
 #suggestion {

@@ -76,7 +76,12 @@ io.on('connection', function(socket){
 		socket.emit('zoek', rows);
 	});
   });
+<<<<<<< ff1820fdfcef052a496134e542088d3f0c079a4a
   socket.on('results', function(msg){
+=======
+    
+ socket.on('results-beroep', function(msg){
+>>>>>>> 833354db9d1af0333ce61d5de7232cc69374002a
 	var fakeResults =[
 		{id: 1, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 		{id: 2, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
@@ -93,8 +98,16 @@ io.on('connection', function(socket){
 		{id: 13, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 	];
 	
+<<<<<<< ff1820fdfcef052a496134e542088d3f0c079a4a
 	socket.emit('results', fakeResults);
   });
+=======
+     socket.emit('results', fakeResults);
+  });
+
+
+    
+>>>>>>> 833354db9d1af0333ce61d5de7232cc69374002a
   socket.on('beroep', function(msg){
 	msg = getSafeQuery(msg);
     var newjobs = msg.split("+");

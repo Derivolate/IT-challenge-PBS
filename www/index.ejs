@@ -14,87 +14,29 @@
             <br/>
             <form action="">
                 <input id="m" type="text" oninput="update()" autocomplete="off" />
-                <button id="search">
-                    <img src="images/search.svg" />
-                </button>
+                     <form id="resultatenzoeken">
+            <button id="search">
+                <img src="images/search.svg" />
+            </button>
+            </form>
                 <button id="filtr">
                     <img src="images/filter.svg" />
                 </button>
             </form>
-            <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-            <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-            <script>
-                var socket = io();
-
-                function update() {
-                    var query = $('#m').val();
-                    if (query) {
-                        socket.emit('zoek', query);
-                    } else {
-                        $('#suggestions').empty();
-                    }
-                }
-                $('form').submit(function() {
-                    socket.emit('zoek', $('#m').val());
-                    $('#m').val('');
-                    return false;
-                });
-                socket.on('zoek', function(msg) {
-                    var reslist = $('#suggestions');
-                    reslist.empty();
-                    var item = 0;
-                    for (item in msg) {
-                        if (item >= 10) {
-                            break;
-                        }
-                        reslist.append($('<button type="button" id="suggestion" class="pr">').text(msg[item].job));
-                    }
-                    reslist.append($('<tr>').text(msg.length + " records in totaal"));
-                });
-            </script>
+       
             <table id="suggestions" />
             <br/>
             <button type="button" class="pr">Aantal records</button>
-            <script>
-             var socket = io();
-              $('form').submit(function(){
-                socket.emit('chat message', $('#m').val());
-                $('#m').val('');
-                return false;
-              });
-            
-              socket.on('results', function(msg){
-                $('#results-beroep').append($('<li>').text(msg));   
-                $("<tr><td><input type=\"text\">CLIENT ID</td><td>JOB NAME</td></tr>").appendTo($("#functies-table")); return false;
-                var item = 0;
-                    for (item in msg) {
-                        if (item >= 100) {
-                            break;
-                        }
-                        reslist.append($('<button type="button" id="suggestion" class="pr">').text(msg[item].job));
-                    }
-                    reslist.append($('<tr>').text(msg.length + " records in totaal"));
-                });
-            </script>
-            
-            <table id=results-beroep>
-                <tr>
-                </tr>
-            </table>
-            <table id=results-project>
-                <tr>
-                    <td>
-                        PROJECT ID
-                    </td>
-                    <td>
-                        PROJECT NAME
-                    </td>
-                </tr>
-            </table>
+            <table id=results-beroep></table>
+            <table id=results-project></table>
         </div>
         <div class="bottom">
             <div class="container">
             </div>
         </div>
+    <script src=js/resultaten.js></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src=js/suggesties.js></script>
     </body>
 </html>

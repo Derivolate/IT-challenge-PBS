@@ -76,6 +76,25 @@ io.on('connection', function(socket){
 		socket.emit('zoek', rows);
 	});
   });
+  socket.on('results', function(msg){
+	var fakeResults =[
+		{id: 1, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 2, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 3, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 4, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 5, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 6, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 7, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 8, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 9, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 10, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 11, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 12, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 13, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+	];
+	
+	socket.emit('results', fakeResults);
+  });
   socket.on('beroep', function(msg){
 	msg = getSafeQuery(msg);
     var newjobs = msg.split("+");

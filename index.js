@@ -59,6 +59,10 @@ app.get('/register', function(req, res) {
 http.listen(50002, function() {
     console.log('listening on *:50002');
 });
+app.get('/myacc', function(req, res) {
+    res.render('../www/myacc');
+});
+
 
 
 io.on('connection', function(socket){
@@ -72,6 +76,38 @@ io.on('connection', function(socket){
 		socket.emit('zoek', rows);
 	});
   });
+<<<<<<< ff1820fdfcef052a496134e542088d3f0c079a4a
+  socket.on('results', function(msg){
+=======
+    
+ socket.on('results-beroep', function(msg){
+>>>>>>> 833354db9d1af0333ce61d5de7232cc69374002a
+	var fakeResults =[
+		{id: 1, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 2, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 3, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 4, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 5, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 6, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 7, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 8, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 9, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 10, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 11, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 12, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+		{id: 13, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
+	];
+	
+<<<<<<< ff1820fdfcef052a496134e542088d3f0c079a4a
+	socket.emit('results', fakeResults);
+  });
+=======
+     socket.emit('results', fakeResults);
+  });
+
+
+    
+>>>>>>> 833354db9d1af0333ce61d5de7232cc69374002a
   socket.on('beroep', function(msg){
 	msg = getSafeQuery(msg);
     var newjobs = msg.split("+");

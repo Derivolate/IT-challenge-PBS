@@ -170,3 +170,11 @@ button:hover {
 #suggestion:hover {
 	background-color: #EEEEEE;
 }
+
+.item {
+  cursor: pointer;
+}
+
+.description {
+  display: none;
+}

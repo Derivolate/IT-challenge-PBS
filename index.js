@@ -59,6 +59,10 @@ app.get('/register', function(req, res) {
 http.listen(50002, function() {
     console.log('listening on *:50002');
 });
+app.get('/myacc', function(req, res) {
+    res.render('../www/myacc');
+});
+
 
 
 io.on('connection', function(socket){

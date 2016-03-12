@@ -1,19 +1,25 @@
              var socket = io();
-              $('#resultatenzoeken').submit(function(){
-                socket.emit('results', $('#m').val());
+              /*$('#resultatenzoeken').submit(function(){
+                socket.emit('results-beroep', $('#m').val());
                 $('#m').val('');
                 return false;
-              });
+              });*/
+			  
+			  $('form').submit(function() {
+				socket.emit('results-beroep', $('#m').val());
+				return false;
+			  });
             
               socket.on('results', function(msg){
-                $('#results-beroep').append($('<li>').text(msg));   
-                $("<tr><td><input type=\"text\">CLIENT ID</td><td>JOB NAME</td></tr>").appendTo($("#functies-table")); return false;
+                var results = $('#results-beroep');
+				results.empty();
+                //$("<tr><td><input type=\"text\">CLIENT ID</td><td>JOB NAME</td></tr>").appendTo($("#functies-table"));
                 var item = 0;
-                    for (item in msg) {
-                        if (item >= 100) {
-                            break;
-                        }
-                        reslist.append($('<button type="button" id="suggestion" class="pr">').text(msg[item].job));
-                    }
-                    reslist.append($('<tr>').text(msg.length + " records in totaal"));
-                });
+				for (item in msg) {
+					if (item >= 100) {
+						break;
+					}
+					results.append($('<button type="button" id="resultitem" class="pr">').text(msg[item].id));
+				}
+				results.append($('<tr>').text(msg.length + " records in totaal"));
+              });

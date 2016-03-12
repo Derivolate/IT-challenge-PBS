@@ -68,6 +68,13 @@ app.get('/myacc', function(req, res) {
 io.on('connection', function(socket){
   var loggedin = false;
   var loginId = null;
+  
+  function newValidation(userId){
+	var q2 = "UPDATE loggedin SET sessionid = '" + socket.id + "' WHERE id = " + userId + ";";
+	db.query(q2, function(err, rows){});
+	socket.emit('validate', socket.id);
+  }
+	
   socket.on('zoek', function(msg){
 	msg = getSafeQuery(msg);
 	var search = "SELECT job FROM jobs WHERE job LIKE '%" + msg + "%' ORDER BY CASE WHEN job LIKE '" + msg + "%' THEN 0 ELSE 1 END, job;";
@@ -76,12 +83,7 @@ io.on('connection', function(socket){
 		socket.emit('zoek', rows);
 	});
   });
-<<<<<<< ff1820fdfcef052a496134e542088d3f0c079a4a
-  socket.on('results', function(msg){
-=======
-    
- socket.on('results-beroep', function(msg){
->>>>>>> 833354db9d1af0333ce61d5de7232cc69374002a
+  socket.on('results-beroep', function(msg){
 	var fakeResults =[
 		{id: 1, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 		{id: 2, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
@@ -97,17 +99,9 @@ io.on('connection', function(socket){
 		{id: 12, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 		{id: 13, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 	];
-	
-<<<<<<< ff1820fdfcef052a496134e542088d3f0c079a4a
+	console.log('results-beroep');
 	socket.emit('results', fakeResults);
   });
-=======
-     socket.emit('results', fakeResults);
-  });
-
-
-    
->>>>>>> 833354db9d1af0333ce61d5de7232cc69374002a
   socket.on('beroep', function(msg){
 	msg = getSafeQuery(msg);
     var newjobs = msg.split("+");
@@ -132,7 +126,7 @@ io.on('connection', function(socket){
 			var q2 = "INSERT INTO accounts (username, password) VALUES ('" + username + "', '" + password + "');";
 			db.query(q2, function(err, rows){});
 			db.query("SELECT * FROM accounts WHERE username = '" + username + "';", function(err, rows){
-				var q3 = "INSERT INTO loggedin (id, loggedin) VALUES (" + rows[0].id + ", 0);";
+				var q3 = "INSERT INTO loggedin (id, loggedin, sessionid) VALUES (" + rows[0].id + ", 0, '');";
 				db.query(q3, function(err, rows){});
 			});
 			socket.emit('registreer', true);
@@ -153,9 +147,10 @@ io.on('connection', function(socket){
 	db.query(q, function(err, rows){
 		if (rows.length > 0){
 			if (rows[0].password == password){
-				var loginq = "UPDATE loggedin SET loggedin = 1 WHERE id = " + rows[0].id + ";";
+				var loginq = "UPDATE loggedin SET loggedin = 1, sessionId = '" + socket.id + "' WHERE id = " + rows[0].id + ";";
 				db.query(loginq, function(err, rows){});
 				socket.emit('login', rows[0].id);
+				socket.emit('validate', socket.id);
 				loggedin = true;
 				loginId = rows[0].id;
 			}
@@ -168,27 +163,45 @@ io.on('connection', function(socket){
 		}
 	});
   });
-  socket.on('logout', function(userId){
-	var logoutq = "UPDATE loggedin SET loggedin = 0 WHERE id = " + userId + ";";
+  socket.on('logout', function(data){
+	var logoutq = "UPDATE loggedin SET loggedin = 0 WHERE id = " + data.userId + " AND sessionid = '" + data.sessionId + "';";
 	db.query(logoutq, function(err, rows){});
 	loggedin = false;
 	loginId = null;
   });
-  socket.on('is_ingelogd', function(userId){
-	var loggedinq = "SELECT * FROM loggedin WHERE id = " + userId + ";";
+  socket.on('is_ingelogd', function(data){
+	var loggedinq = "SELECT * FROM loggedin WHERE id = " + data.userId + " AND sessionid = '" + data.sessionId + "';";
 	console.log(loggedinq);
 	db.query(loggedinq, function(err, rows){
 		if (rows[0]){
 			console.log(rows[0]);
 			socket.emit('ingelogd', rows[0].loggedin == 1);
+			newValidation(rows[0].id);
 		}
 	});
   });
   socket.on('login_username', function(userId){
-	socket.emit('login_username', loginUsername);
+	
   });
-  socket.on('pform', function(data){
-    console.log("swek ingestuurd");
+  socket.on('nieuw_project', function(project){
+    var q = "INSERT INTO projects (projectid, projectnaam, omschrijving, plaats, startdatum, einddatum, functie, omschrijvingwerkzaamheden, vaardigheden, skills, functieomvang, aantaluren, startdatum, einddatum, bestandsnaam) VALUES (";
+	var i = 0;
+	for (i in project){
+		q += "'" + project[i] + "'";
+		if (i < project.length){
+			q += ", ";
+		}
+	}
+	q += ");";
+	db.query(q, function(err, rows){});
+  });
+  socket.on('validate', function(sessionId){
+	var q = "SELECT * FROM loggedin WHERE sessionid = '" + sessionId + "';";
+	db.query(q, function(err, rows){
+		if (rows.length > 0){
+			newValidation(rows[0].id);
+		}
+	});
   });
   
   socket.on('disconnect', function(){

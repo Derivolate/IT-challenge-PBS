@@ -8,11 +8,6 @@
                         $('#suggestions').empty();
                     }
                 }
-                $('form').submit(function() {
-                    socket.emit('zoek', $('#m').val());
-                    $('#m').val('');
-                    return false;
-                });
                 socket.on('zoek', function(msg) {
                     var reslist = $('#suggestions');
                     reslist.empty();

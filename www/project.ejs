@@ -13,13 +13,25 @@
 				<script>
 				  var socket = io();
 				  
-				  var Projectform = {
-					ID:$('#Pid').val(),
-					naam:$('#pnaam').val()
-					};
-				  
 				  $('#save').click(function(){
-					socket.emit('pform', Projectform);
+					var project = [
+						$('#pid').val(),
+						$('#pnm').val(),
+						$('#pom').val(),
+						$('#ppl').val(),
+						$('#psb').val(),
+						$('#pse').val(),
+						$('#peb').val(),
+						$('#pee').val(),
+						$('#pow').val(),
+						$('#pgv').val(),
+						$('#pgs').val(),
+						$('#pdi').val(),
+						$('#pur').val(),
+						$('#psd').val(),
+						$('#ped').val()
+					];
+					socket.emit('nieuw_project', project);
 					//HOUD JE GVD JE BEK NOU
 					return false;
 				  });

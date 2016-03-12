@@ -14,29 +14,29 @@
             <br/>
             <form action="">
                 <input id="m" type="text" oninput="update()" autocomplete="off" />
-                     <form id="resultatenzoeken">
-            <button id="search">
-                <img src="images/search.svg" />
-            </button>
-            </form>
                 <button id="filtr">
-                    <img src="images/filter.svg" />
-                </button>
-            </form>
-       
+					<img src="images/filter.svg" />
+				</button>
+			</form>
+			<form id="resultatenzoeken">
+				<button id="search">
+					<img src="images/search.svg" />
+				</button>
+			</form>
+			
             <table id="suggestions" />
             <br/>
             <button type="button" class="pr">Aantal records</button>
-            <table id=results-beroep></table>
-            <table id=results-project></table>
+            <table id="results-beroep" />
+            <table id="results-project" />
         </div>
         <div class="bottom">
             <div class="container">
             </div>
         </div>
-    <script src=js/resultaten.js></script>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src=js/suggesties.js></script>
+    <script src="js/suggesties.js"></script>
+    <script src="js/resultaten.js"></script>
     </body>
 </html>

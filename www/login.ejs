@@ -49,9 +49,12 @@
                 }
 				
                 socket.on('login', function(userId) {
-					localStorage.setItem("userId", userId);
+					sessionStorage.setItem("userId", userId);
 					updateBtnText(true);
                 });
+				socket.on('validate', function(sessionId){
+					sessionStorage.setItem("sessionId", sessionId);
+				});
             </script>
         </div>
         <div class="bottom">

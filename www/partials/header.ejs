@@ -4,39 +4,48 @@
         </div>
         <div class="inlog">
             <a href="login" id="login" onclick="onClick()">Login</a>
-            <a href="register">Register</a>
+            <a href="register" id="register" onclick="onClick()">Registreer</a>
         </div>
 		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 		<script>
 			var socket = io();
 			var loggedIn = false;
-			var userId = localStorage.getItem("userId");
-			if (userId !== null){
-				socket.emit('is_ingelogd', userId);
+			var UserId = sessionStorage.getItem("userId");
+			var SessionId = sessionStorage.getItem("sessionId");
+			if (UserId !== null && SessionId !== null){
+				socket.emit('is_ingelogd', {userId: UserId, sessionId: SessionId});
 			}
 			
 			function onClick(){
 				if (loggedIn){
-					socket.emit('logout', userId);
-					localStorage.setItem("userId", null);
+					socket.emit('logout', {userId: UserId, sessionId: SessionId});
+					sessionStorage.setItem("userId", null);
+					sessionStorage.setItem("sessionId", null);
 				}
 			}
 			
 			function updateBtnText(loginStatus){
 				loggedIn = loginStatus;
 				
-				var btnText = '';
+				var loginText = 'Login';
+				var registerText = 'Register';
 				if (loginStatus){
-					btnText = 'Logout';
+					loginText = 'Logout';
+					registerText = '';
 				}
-				else{
-					btnText = 'Login';
-				}
-				document.getElementById("login").text = btnText;
+				document.getElementById("login").text = loginText;
+				document.getElementById("register").text = registerText;
 			}
 			
+			socket.on('validate', function(newSessionId){
+				sessionStorage.setItem("sessionId", newSessionId);
+			});
 			socket.on('ingelogd', function(loginStatus) {
+				if (!loginStatus){
+					sessionStorage.setItem("userId", null);
+					sessionStorage.setItem("sessionId", null);
+				}
 				updateBtnText(loginStatus);
 			});
 		</script>

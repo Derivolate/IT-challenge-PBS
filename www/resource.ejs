@@ -12,103 +12,158 @@
 				+ Resource <br/>
 				<div class="article current">
                     <div class="item">
-                    NAW
+                        NAW
                     </div>
                     <div class="description">
-                <table>
-				<tr><td>Achternaam:</td><td><input type="text" id="ran"></td></tr> 
-				<tr><td>Voorvoegsels:</td><td><input type="text" id="rvv"></td></tr> 
-				<tr><td>Voorletters:</td><td><input type="text" id="rvl"></td></tr>				
-				<tr><td>Voornamen:</td><td><input type="text" id="rvn"></td></tr> 
-				<tr><td>Roepnaam:</td><td><input type="text" id="rrn"></td></tr>
-				<tr><td>Woonadres:</td><td><input type="text" id="rwa"></td></tr>
-				<tr><td>Postcode:</td><td><input type="text" id="rpc"></td></tr>
-				<tr><td>Plaats:</td><td><input type="text" id="rpl"></td></tr>
-				<tr><td>Land:</td><td><input type="text" id="rla"></td></tr>				
-				<tr><td>Telefoon</td></tr>
-				<tr><td>thuis:</td><td><input type="tel" id="rtt"></td></tr> <!-- rtt: telefoon thuis-->
-				<tr><td>werk:</td><td><input type="tel" id="rtw"></td></tr> <!-- rtw: telefoon werk-->
-				<tr><td>mobiel:</td><td><input type="tel" id="rtm"></td></tr> <!-- rtw: telefoon mobiel-->
-				<tr><td>E-mail 1:</td><td><input type="email" id="rm1"></td></tr> <!-- rm1: mail1-->
-				<tr><td>E-mail 2:</td><td><input type="email" id="rm2"></td></tr> <!-- rm2: mail2-->
-				<tr><td>Geboortedatum:</td><td><input type="text" id="rgd"></td></tr>
-				<tr><td>Geboorteplaats:</td><td><input type="text" id="rgp"></td></tr>
-				<tr><td>Nationaliteit:</td><td><input type="text" id="rna"></td></tr>
-				<tr><td>Burgelijke staat</td></tr>
-				<tr><td>Ongehuwd</td><td><input type="checkbox" id="rbs" value="onhuw"></td></tr>
-				<tr><td>Gehuwd</td><td><input type="checkbox" id="rbs" value="gehuw"></td></tr>
-				<tr><td>Gescheiden</td><td><input type="checkbox" id="rbs" value="gesch"></td></tr>
-				<tr><td>Alleenstaand</td><td><input type="checkbox" id="rbs" value="astaand"></td></tr>
-				<tr><td>Samenwonend</td><td><input type="checkbox" id="rbs" value="sstaand"></td></tr>
-				<tr><td>Rijbewijs:</td><td><input type="text" id="rrb"></td></tr>
-				<tr><td>Auto:</td><td><input type="text" id="rau"></td></tr>
-				</table>
+                        <table>
+                            <tr><td>Achternaam:</td><td><input type="text" id="ran"></td></tr> 
+                            <tr><td>Voorvoegsels:</td><td><input type="text" id="rvv"></td></tr> 
+                            <tr><td>Voorletters:</td><td><input type="text" id="rvl"></td></tr>				
+				            <tr><td>Voornamen:</td><td><input type="text" id="rvn"></td></tr> 
+				            <tr><td>Roepnaam:</td><td><input type="text" id="rrn"></td></tr>
+				            <tr><td>Woonadres:</td><td><input type="text" id="rwa"></td></tr>
+				            <tr><td>Postcode:</td><td><input type="text" id="rpc"></td></tr>
+				            <tr><td>Plaats:</td><td><input type="text" id="rpl"></td></tr>
+				            <tr><td>Land:</td><td><input type="text" id="rla"></td></tr>				
+				            <tr><td>Telefoon</td></tr>
+				            <tr><td>thuis:</td><td><input type="tel" id="rtt"></td></tr> <!-- rtt: telefoon thuis-->
+				            <tr><td>werk:</td><td><input type="tel" id="rtw"></td></tr> <!-- rtw: telefoon werk-->
+				            <tr><td>mobiel:</td><td><input type="tel" id="rtm"></td></tr> <!-- rtw: telefoon mobiel-->
+				            <tr><td>E-mail 1:</td><td><input type="email" id="rm1"></td></tr> <!-- rm1: mail1-->
+				            <tr><td>E-mail 2:</td><td><input type="email" id="rm2"></td></tr> <!-- rm2: mail2-->
+				            <tr><td>Geboortedatum:</td><td><input type="text" id="rgd"></td></tr>
+				            <tr><td>Geboorteplaats:</td><td><input type="text" id="rgp"></td></tr>
+				            <tr><td>Nationaliteit:</td><td><input type="text" id="rna"></td></tr>
+				            <tr><td>Burgelijke staat</td></tr>
+				            <tr><td>Ongehuwd</td><td><input type="checkbox" id="rbs" value="onhuw"></td></tr>
+				            <tr><td>Gehuwd</td><td><input type="checkbox" id="rbs" value="gehuw"></td></tr>
+				            <tr><td>Gescheiden</td><td><input type="checkbox" id="rbs" value="gesch"></td></tr>
+				            <tr><td>Alleenstaand</td><td><input type="checkbox" id="rbs" value="astaand"></td></tr>
+				            <tr><td>Samenwonend</td><td><input type="checkbox" id="rbs" value="sstaand"></td></tr>
+				            <tr><td>Rijbewijs:</td><td><input type="text" id="rrb"></td></tr>
+				            <tr><td>Auto:</td><td><input type="text" id="rau"></td></tr>
+                        </table>
+                    </div>
                 </div>
-                </div>
+            
                 <div class="article">
-                <div class="item">
-				Functie(s)
+                    <div class="item">
+				        Functie(s)
+                    </div>
+                    <div class="description">    
+				        <table id="functies-table" class="article">
+                            <tr><td><input type="text" list="functies" id="functie"></td></tr>
+                        </table>
+                        <table>
+				            <tr><td><button type="button" onclick='$("<tr><td><input type=\"text\" id=\"fucntie\"/></td></tr>").appendTo($("#functies-table")); return false;'>+</button></td></tr>
+                        </table>
+				        <script>
+                            function insertText () {
+                                document.getElementById('td1').innerHTML = "some text to enter";
+                            }
+                        </script>
+                    </div>
                 </div>
-                <div class="description">    
-				<table id="functies-table" class="article">
-				<tr><td><input type="text" list="functies" id="functie"></td></tr>
-				</table>
-				<table>
-				<tr><td><button type="button" onclick='$("<tr><td><input type=\"text\" id=\"fucntie\"/></td></tr>").appendTo($("#functies-table")); return false;'>+</button></td></tr>
-				</table>
-				<script>
-					function insertText () {
-						document.getElementById('td1').innerHTML = "some text to enter";
-					}
-				</script>
+                <div class="article current">
+                    <div class="item">
+                        Opleidingen
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td></td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr>
+				            <tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
                 </div>
+                <div class="article current">
+                    <div class="item">
+                        Cursussen
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td></td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Omschrijving</td><td>Diploma</td><td>Jaar</td></tr>
+				            <tr><td>1:</td><td><input type="month" id="cstart"></td><td><input type="month" id="ceind"></td><td><input list="opleidingen" id="copleiding"></td><td><input list="omschrijvingen" id="omschrijving"></td><td>Ja:<input type="radio" id="cdiplo" value="ja">Nee:<input type="radio" id="cdiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="cyear"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
                 </div>
-				<table>
-				<tr><td>Opleidingen</td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr>
-				<tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Cursussen</td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Omschrijving</td><td>Diploma</td><td>Jaar</td></tr>
-				<tr><td>1:</td><td><input type="month" id="cstart"></td><td><input type="month" id="ceind"></td><td><input list="opleidingen" id="copleiding"></td><td><input list="omschrijvingen" id="omschrijving"></td><td>Ja:<input type="radio" id="cdiplo" value="ja">Nee:<input type="radio" id="cdiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="cyear"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Vaardigheden</td><td>Vaardigheid</td><td>Jaren ervaring</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="text" list="vheden" id="vheid"></td><td><input type="number" min="0" max="100" step="1" value="0" id="vyear"></td><td><input type="month" id="vstart"></td><td><input type="month" id="veind"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Certificaten</td><td>Naam/omschrijving</td><td>Jaar</td></tr>
-				<tr><td>1:</td><td><input type="text" id="certi"></td><td><input list="omschrijvingen" id="omschrijving"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="ceyear"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				Skills
-				<table>
-				<tr><td>1:</td><td><input type="text" list="skills" id="skill"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				Hobby's
-				<table>
-				<tr><td>1:</td><td><input type="text" list="hobbys" id="hobby"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Beschikbaar</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="date" id="bstart"></td><td><input type="date" id="beind"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Niet beschikbaar</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td>1:</td><td><input type="date" id="nbstart"></td><td><input type="date" id="nbeind"></td></tr>
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
-				<table>
-				<tr><td>Prijs p/u:</td><td><input type="text" id="prijs"></td></tr>		
-				<tr><td>Prijsklasse p/u:</td><td><input type="text" id="pklasse"></td></tr>		
-				<tr><td>Gewenste Bruto maandsalaris:</td><td><input type="text" id="brutom"></td></tr>		
-				<tr><td>Gewenste Bruto jaarsalaris:</td><td><input type="text" id="brutoj"></td></tr>		
-				</table>
+                <div class="article current">
+                    <div class="item">
+                        Vaardigheden
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td></td><td>Vaardigheid</td><td>Jaren ervaring</td><td>Vanaf</td><td>Tot</td></tr>
+				            <tr><td>1:</td><td><input type="text" list="vheden" id="vheid"></td><td><input type="number" min="0" max="100" step="1" value="0" id="vyear"></td><td><input type="month" id="vstart"></td><td><input type="month" id="veind"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
+                </div>
+                <div class="article current">
+                    <div class="item">
+                        Certificaten
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td>Certificaten</td><td>Naam/omschrijving</td><td>Jaar</td></tr>
+				            <tr><td>1:</td><td><input type="text" id="certi"></td><td><input list="omschrijvingen" id="omschrijving"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="ceyear"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
+                </div>
+                <div class="article current">
+                    <div class="item">
+                        Skills
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td>1:</td><td><input type="text" list="skills" id="skill"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
+                </div>
+                <div class="article current">
+                    <div class="item">
+                        Hobby's
+                    </div>
+                    <div class="description">
+				        <table>
+                            <tr><td>1:</td><td><input type="text" list="hobbys" id="hobby"></td></tr>
+                            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
+                </div>
+                <div class="article current">
+                    <div class="item">
+                        Beschikbaarheid
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td>Beschikbaar</td><td>Vanaf</td><td>Tot</td></tr>
+				            <tr><td>1:</td><td><input type="date" id="bstart"></td><td><input type="date" id="beind"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+				        <table>
+				            <tr><td>Niet beschikbaar</td><td>Vanaf</td><td>Tot</td></tr>
+				            <tr><td>1:</td><td><input type="date" id="nbstart"></td><td><input type="date" id="nbeind"></td></tr>
+				            <tr><td><button type="button">+</button></td></tr>
+				        </table>
+                    </div>
+                </div>
+                <div class="article current">
+                    <div class="item">
+                        Salaris
+                    </div>
+                    <div class="description">
+				        <table>
+				            <tr><td>Prijs p/u:</td><td><input type="text" id="prijs"></td></tr>		
+				            <tr><td>Prijsklasse p/u:</td><td><input type="text" id="pklasse"></td></tr>		
+				            <tr><td>Gewenste Bruto maandsalaris:</td><td><input type="text" id="brutom"></td></tr>		
+				            <tr><td>Gewenste Bruto jaarsalaris:</td><td><input type="text" id="brutoj"></td></tr>		
+				        </table>
+                    </div>
+                </div>
 				<button type="button">Bestand toevoegen</button><button type="button">Opslaan</button>
 		</div>
 		<div class="bottom">

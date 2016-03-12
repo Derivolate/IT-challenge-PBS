@@ -184,7 +184,13 @@ button:hover {
 }
 
 .item {
-  cursor: pointer;
+    cursor: pointer;
+    margin-left: -40px;
+    width: 800px;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    background: rgba(255, 255, 250, 0.38);
+    padding: 15px;
 }
 
 .description {

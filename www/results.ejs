@@ -7,34 +7,17 @@
         <% include partials/header %>
 
         <% include partials/sidebar %>
-
-		<div class="body">
-				<button type="button">Projects</button>
-				<button type="button">Resources</button>
-				<button type="button">Aantal records</button>				
-				<input type="text" name="user"/>
-				<button type="button">Filter</button>
-				<button type="button">Tonen</button>
-		</div>
-		<table class="results">
-			<tr>
-				<td>ID</td>
-				<td>Plaats</td>
-				<td>Functie</td>
-				<td>Prijsklasse</td>
-				<td>Leeftijd</td>
-			</tr>
-			<tr>
-				<td>results</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<div class="bottom">
-			<div class="container">
-			</div>
-		</div>
-	</body>
+	
+            <table id="beroep-results">
+				<tr><td>bleh</td></tr>
+			</table>
+			
+			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+            <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+			<script src="js/resultaten.js"></script>
+        <div class="bottom">
+            <div class="container">
+            </div>
+        </div>
+    </body>
 </html>

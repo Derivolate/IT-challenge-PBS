@@ -12,19 +12,17 @@
             <button type="button" class="pr" id="pr" onclick="changeIDpr()">Projects</button>
             <button type="button" class="pr" id="rc" onclick="changeIDrc()">Resources</button>
             <br/>
-            <form action="">
+            <form action="results">
                 <input id="m" type="text" oninput="update()" autocomplete="off" />
                 <button id="filtr">
 					<img src="images/filter.svg" />
 				</button>
-			</form>
-			<form id="resultatenzoeken">
-				<button id="search">
+				<button id="search"">
 					<img src="images/search.svg" />
 				</button>
 			</form>
 			
-            <table id="suggestions" />
+            <form id="suggestions" action="results" />
             <br/>
             <button type="button" class="pr">Aantal records</button>
             <table id="results-beroep" />
@@ -37,6 +35,5 @@
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="js/suggesties.js"></script>
-    <script src="js/resultaten.js"></script>
     </body>
 </html>

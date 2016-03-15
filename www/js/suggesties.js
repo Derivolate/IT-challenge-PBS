@@ -7,7 +7,10 @@
                     } else {
                         $('#suggestions').empty();
                     }
+					
+					sessionStorage.setItem("search", query);
                 }
+				
                 socket.on('zoek', function(msg) {
                     var reslist = $('#suggestions');
                     reslist.empty();
@@ -16,7 +19,7 @@
                         if (item >= 10) {
                             break;
                         }
-                        reslist.append($('<button type="button" id="suggestion" class="pr">').text(msg[item].job));
+                        reslist.append($('<button type="button" id="suggestion" class="pr" href="results" onclick="search(' + msg[item].job + ')">').text(msg[item].job));
                     }
                     reslist.append($('<tr>').text(msg.length + " records in totaal"));
                 });

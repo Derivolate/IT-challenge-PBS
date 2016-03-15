@@ -74,17 +74,54 @@ io.on('connection', function(socket){
 	db.query(q2, function(err, rows){});
 	socket.emit('validate', socket.id);
   }
+  
+  function getJobQuery(search_pattern){
+	return "SELECT * FROM jobs WHERE job LIKE '%" + search_pattern + "%' ORDER BY CASE WHEN job LIKE '" + search_pattern + "%' THEN 0 ELSE 1 END, job;";
+  }
 	
   socket.on('zoek', function(msg){
 	msg = getSafeQuery(msg);
-	var search = "SELECT job FROM jobs WHERE job LIKE '%" + msg + "%' ORDER BY CASE WHEN job LIKE '" + msg + "%' THEN 0 ELSE 1 END, job;";
+	var search = getJobQuery(msg);
 	db.query(search, function(err, rows){
 		if (err) throw err;
 		socket.emit('zoek', rows);
 	});
   });
   socket.on('results-beroep', function(msg){
-	var fakeResults =[
+	msg = getSafeQuery(msg);
+	var jobsearch = getJobQuery(msg);
+	db.query(jobsearch, function(err, pjobs){
+		var i = 0;
+		var whereStatement = "WHERE ";
+		
+		for (i in pjobs){
+			whereStatement += "jobid = " + pjobs[i].id;
+			if (i < pjobs.length - 1){
+				whereStatement += " OR ";
+			}
+		}
+		
+		var resultsearch = "SELECT * FROM user_jobs " + whereStatement + ";";
+		db.query(resultsearch, function(err, matches){
+			var results = [];
+			var j = 0;
+			
+			for (j in matches){
+				var getuser = "SELECT * FROM accounts WHERE id = " + matches[j].userid + ";";
+				db.query(getuser, function(err, user){
+					results.push(user[0]);
+					if (results.length == matches.length){
+						sendResults();
+					}
+				});
+			}
+			
+			function sendResults(){
+				socket.emit('results', results);
+			}
+		});
+	});
+	/*var fakeResults =[
 		{id: 1, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 		{id: 2, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 		{id: 3, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
@@ -100,7 +137,7 @@ io.on('connection', function(socket){
 		{id: 13, naam: "test1", beschrijving: "jsdfljsdlkfja;lehrfk;sdjf;skdfjksdjf;lsdfjlkejfl;kd"},
 	];
 	console.log('results-beroep');
-	socket.emit('results', fakeResults);
+	socket.emit('results', fakeResults);*/
   });
   socket.on('beroep', function(msg){
 	msg = getSafeQuery(msg);

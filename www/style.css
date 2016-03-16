@@ -105,16 +105,14 @@ body#background-rc {
 .body { 
 	background-color: rgba(136, 143, 153, 0.65);
 	padding: 40px;
-	margin-left: 30%;
+	margin-left: 20%;
 	width: 750px;
-    position: fixed;
 }
 
 .body-pr { 
-	background-color: #999999;
-	border: 3px solid #00353F;
+	background-color: rgba(136, 143, 153, 0.65);
 	padding: 40px;
-	margin-left: 30%;
+	margin-left: 20%;
 	width: 750px;
 }
 
@@ -192,8 +190,10 @@ button:hover {
     width: 800px;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
-    background: lightsteelblue;
+    background: #062A60;
     padding: 15px;
+    color: lightgrey;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .description {

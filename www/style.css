@@ -106,8 +106,8 @@ body#background-rc {
 	background-color: rgba(30, 144, 255, 0.38);
 	padding: 40px;
 	margin-left: 30%;
-	margin-top: 238px;
 	width: 750px;
+    position: fixed;
 }
 
 .body-pr { 
@@ -150,13 +150,16 @@ button:hover {
 }
 
 #search {
-	margin-left: 642px;
+	margin-left: 692px;
 }
 
 #search:hover {
     border: 1px solid rgba(0,0,0, 0.5);
 }
 
+#filtr {
+    margin-left: 642px;
+}
 #filtr:hover {
     border: 1px solid rgba(0,0,0, 0.5);
 }

@@ -125,9 +125,7 @@ body#background-rc {
 }
 
 button {
-	width: 50px;
-	height: 46px;
-	border: 0px;
+    border: 0px;
 	background-color: #062A60;
 	color: lightgrey;
 	font-family: 'Open Sans', sans-serif;
@@ -135,9 +133,18 @@ button {
 	font-size: 16px;  
 }
 
+form button {
+    height: 46px;
+    width: 46px;
+}
+
+table button {
+    height: 40px;
+    width: 40px;
+}
+
 button:hover {
     color: whitesmoke;
-    border: 1px solid rgba(0,0,0, 0.5);
 }
 
 #m {
@@ -149,10 +156,6 @@ button:hover {
 
 #search {
 	margin-left: 692px;
-}
-
-#search:hover {
-    border: 1px solid rgba(0,0,0, 0.5);
 }
 
 #filtr {
@@ -190,12 +193,39 @@ button:hover {
     width: 800px;
     border-top: black solid 1px;
     border-bottom: black solid 1px;
-    background: #062A60;
+    background: #29446C;
     padding: 15px;
     color: lightgrey;
 	font-family: 'Open Sans', sans-serif;
+
 }
 
 .description {
-  display: none;
+    display: none;
+    margin: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.description td {
+    padding: 5px;
+}
+
+.description input{
+    height: 20px;
+}
+
+.description input[type="text"] {
+    width: 200px;
+}
+
+.description input[type="email"] {
+    width: 200px;
+}
+
+.description input[type="tel"] {
+    width: 200px;
+}
+
+.description input[type="date"] {
+    width: 130px;
 }

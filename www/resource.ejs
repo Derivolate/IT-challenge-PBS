@@ -26,8 +26,8 @@
 				            <tr><td>Plaats:</td><td><input type="text" id="rpl"></td></tr>
 				            <tr><td>Land:</td><td><input type="text" id="rla"></td></tr>				
 				            <tr><td>Telefoon</td></tr>
-				            <tr><td>thuis:</td><td><input type="tel" id="rtt"></td></tr> <!-- rtt: telefoon thuis-->
-				            <tr><td>werk:</td><td><input type="tel" id="rtw"></td></tr> <!-- rtw: telefoon werk-->
+				            <tr><td>Thuis:</td><td><input type="tel" id="rtt"></td></tr> <!-- rtt: telefoon thuis-->
+				            <tr><td>Werk:</td><td><input type="tel" id="rtw"></td></tr> <!-- rtw: telefoon werk-->
 				            <tr><td>mobiel:</td><td><input type="tel" id="rtm"></td></tr> <!-- rtw: telefoon mobiel-->
 				            <tr><td>E-mail 1:</td><td><input type="email" id="rm1"></td></tr> <!-- rm1: mail1-->
 				            <tr><td>E-mail 2:</td><td><input type="email" id="rm2"></td></tr> <!-- rm2: mail2-->
@@ -70,8 +70,8 @@
                     </div>
                     <div class="description">
 				        <table>
-				            <tr><td></td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr>
-				            <tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>
+                            <tr><td></td><td>Vanaf</td><td>Tot</td><td>Opleiding</td></tr>
+				            <tr><td>1:</td><td><input type="month" id="ostart"></td><td><input type="month" id="oeind"></td><td><input list="opleidingen" id="opleiding"></td></tr><tr><td></td><td>Vakken</td><td>Diploma</td><td>Jaar</td></tr><tr><td></td><td><input list="vakken" id="vak"></td><td>Ja:<input type="radio" id="odiplo" value="ja">Nee:<input type="radio" id="odiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="oyear"></td></tr>
 				            <tr><td><button type="button">+</button></td></tr>
 				        </table>
                     </div>
@@ -82,8 +82,8 @@
                     </div>
                     <div class="description">
 				        <table>
-				            <tr><td></td><td>Vanaf</td><td>Tot</td><td>Opleiding</td><td>Omschrijving</td><td>Diploma</td><td>Jaar</td></tr>
-				            <tr><td>1:</td><td><input type="month" id="cstart"></td><td><input type="month" id="ceind"></td><td><input list="opleidingen" id="copleiding"></td><td><input list="omschrijvingen" id="omschrijving"></td><td>Ja:<input type="radio" id="cdiplo" value="ja">Nee:<input type="radio" id="cdiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="cyear"></td></tr>
+                            <tr><td></td><td>Vanaf</td><td>Tot</td><td>Opleiding</td></tr>
+				            <tr><td>1:</td><td><input type="month" id="cstart"></td><td><input type="month" id="ceind"></td><td><input list="opleidingen" id="copleiding"></td></tr><tr><td></td><td>Omschrijving</td><td>Diploma</td><td>Jaar</td></tr><tr><td></td><td><input list="omschrijvingen" id="omschrijving"></td><td>Ja:<input type="radio" id="cdiplo" value="ja">Nee:<input type="radio" id="cdiplo" value="nee"></td><td><input type="number" min="1900" max="2020" step="1" value="2000" id="cyear"></td></tr>
 				            <tr><td><button type="button">+</button></td></tr>
 				        </table>
                     </div>
@@ -164,7 +164,7 @@
 				        </table>
                     </div>
                 </div>
-				<button type="button">Bestand toevoegen</button><button type="button">Opslaan</button>
+				<button class="pr" type="button">Bestand toevoegen</button><button class="pr" type="button">Opslaan</button>
 		</div>
 		<div class="bottom">
 			<div class="container">

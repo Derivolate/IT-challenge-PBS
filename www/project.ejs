@@ -47,7 +47,7 @@
                             <tr><td>Project ID:</td><td><input type="text" id="pid"></td></tr> <!-- pid: id-->
                             <tr><td>Projectnaam:</td><td><input type="text" id="pnm"></td></tr> <!-- pnm: naam-->
                             <tr><td>Omschrijving:</td><td><input type="text" id="pom"></td></tr> <!-- pom: omschrijving-->				
-                            <tr><td>Plaats:</td><td><input list="plaatsen" id="ppl"></td></tr> <!-- ppl: plaats-->		
+                            <tr><td>Plaats:</td><td><input type="text" list="plaatsen" id="ppl"></td></tr> <!-- ppl: plaats-->		
 				        </table>
                     </div>
                 </div>
@@ -58,11 +58,11 @@
                     <div class="description">
                         <table>
                             <tr><td>Startdatum</td><td>Vanaf</td><td>Tot</td></tr>
-                            <tr><td></td><td><input type="date" id="psb"></td><td><input type="date" id="pse"></td></tr> <!-- psb: start begin, pse: start eind-->
+                            <tr><td></td><td><input type="date" class="date" id="psb"></td><td><input type="date" id="pse"></td></tr> <!-- psb: start begin, pse: start eind-->
                         </table>
                         <table>
                             <tr><td>Einddatum</td><td>Vanaf</td><td>Tot</td></tr>
-                            <tr><td></td><td><input type="date" id="peb"></td><td><input type="date" id="pee"></td></tr> <!-- peb: eind begin, pee: eind eind-->
+                            <tr><td></td><td><input type="date" class="date" id="peb"></td><td><input type="date" id="pee"></td></tr> <!-- peb: eind begin, pee: eind eind-->
                         </table>
                     </div>
                 </div>
@@ -86,14 +86,14 @@
                             <tr><td>Aantal uren</td><td><input type="number" min="0" max="100" step="1" value="20" id="pur"></td></tr> <!-- pur: uren-->
                             <tr><td><button type="button">+</button></td></tr>
                             <tr><td>Startdatum</td></tr> 
-                            <tr><td><input type="date" id="psd"></td></tr> <!-- psd: start datum-->
+                            <tr><td><input type="date" class="date" id="psd"></td></tr> <!-- psd: start datum-->
                             <tr><td>Einddatum</td></tr>
-                            <tr><td><input type="date" id="ped"></td></tr> <!-- ped: eind datum-->
+                            <tr><td><input type="date" class="date" id="ped"></td></tr> <!-- ped: eind datum-->
                             <tr><td><button type="button">+</button></td></tr>
                         </table>
                     </div>
             </div>
-				<button type="button">Bestand toevoegen</button><button id="psa">Opslaan</button> <!-- psa: save-->
+				<button class="pr" type="button">Bestand toevoegen</button><button class="pr" id="psa">Opslaan</button> <!-- psa: save-->
 		</div>
 		<div class="bottom">
 			<div class="container">

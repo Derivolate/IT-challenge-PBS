@@ -38,41 +38,61 @@
 				</script>
 				
 				+ Project <br/>
-				<table>
-				<tr><td>Project ID:</td><td><input type="text" id="pid"></td></tr> <!-- pid: id-->
-				<tr><td>Projectnaam:</td><td><input type="text" id="pnm"></td></tr> <!-- pnm: naam-->
-				<tr><td>Omschrijving:</td><td><input type="text" id="pom"></td></tr> <!-- pom: omschrijving-->				
-				<tr><td>Plaats:</td><td><input list="plaatsen" id="ppl"></td></tr> <!-- ppl: plaats-->		
-				</table>
-				<table>
-				<tr><td>Startdatum</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td></td><td><input type="date" id="psb"></td><td><input type="date" id="pse"></td></tr> <!-- psb: start begin, pse: start eind-->
-				</table>
-				<table>
-				<tr><td>Einddatum</td><td>Vanaf</td><td>Tot</td></tr>
-				<tr><td></td><td><input type="date" id="peb"></td><td><input type="date" id="pee"></td></tr> <!-- peb: eind begin, pee: eind eind-->
-				</table>
-				Functie(s)
-				<table>
-				<tr><td>Omschrijving v/d werkzaamheden</td></tr>
-				<tr><td><input type="text" id="pow"></td></tr> <!-- pow: omschrijving werkzaamheden-->
-				<tr><td>Gevraagde vaardigheden</td></tr>
-				<tr><td><input type="text" list="vheden" id="pgv"></td></tr> <!-- pgv: gevraagde vaardigheden-->
-				<tr><td><button type="button">+</button></td></tr>
-				<tr><td>Gevraagde skills</td></tr>
-				<tr><td><input type="text" list="skills" id="pgs"></td></tr> <!-- pgs: gevraagde skils-->
-				<tr><td><button type="button">+</button></td></tr>
-				<tr><td>Functie omvang</td></tr>
-				<tr><td>Fulltime</td><td><input type="radio" id="pdi" value="ftime"></td></tr> <!-- pdi: dienst-->
-				<tr><td>Parttime</td><td><input type="radio" id="pdi" value="ptime"></td></tr> <!-- pdi: dienst-->
-				<tr><td>Aantal uren</td><td><input type="number" min="0" max="100" step="1" value="20" id="pur"></td></tr> <!-- pur: uren-->
-				<tr><td><button type="button">+</button></td></tr>
-				<tr><td>Startdatum</td></tr> 
-				<tr><td><input type="date" id="psd"></td></tr> <!-- psd: start datum-->
-				<tr><td>Einddatum</td></tr>
-				<tr><td><input type="date" id="ped"></td></tr> <!-- ped: eind datum-->
-				<tr><td><button type="button">+</button></td></tr>
-				</table>
+                <div class="article current">
+                    <div class="item">
+                        NAW
+                    </div>
+                    <div class="description">
+                        <table>
+                            <tr><td>Project ID:</td><td><input type="text" id="pid"></td></tr> <!-- pid: id-->
+                            <tr><td>Projectnaam:</td><td><input type="text" id="pnm"></td></tr> <!-- pnm: naam-->
+                            <tr><td>Omschrijving:</td><td><input type="text" id="pom"></td></tr> <!-- pom: omschrijving-->				
+                            <tr><td>Plaats:</td><td><input list="plaatsen" id="ppl"></td></tr> <!-- ppl: plaats-->		
+				        </table>
+                    </div>
+                </div>
+                <div class="article current">
+                    <div class="item">
+                        Projectduur
+                    </div>
+                    <div class="description">
+                        <table>
+                            <tr><td>Startdatum</td><td>Vanaf</td><td>Tot</td></tr>
+                            <tr><td></td><td><input type="date" id="psb"></td><td><input type="date" id="pse"></td></tr> <!-- psb: start begin, pse: start eind-->
+                        </table>
+                        <table>
+                            <tr><td>Einddatum</td><td>Vanaf</td><td>Tot</td></tr>
+                            <tr><td></td><td><input type="date" id="peb"></td><td><input type="date" id="pee"></td></tr> <!-- peb: eind begin, pee: eind eind-->
+                        </table>
+                    </div>
+                </div>
+            	<div class="article current">
+                    <div class="item">
+                        Functie(s)
+                    </div>
+                    <div class="description">
+                        <table>
+                            <tr><td>Omschrijving v/d werkzaamheden</td></tr>
+                            <tr><td><input type="text" id="pow"></td></tr> <!-- pow: omschrijving werkzaamheden-->
+                            <tr><td>Gevraagde vaardigheden</td></tr>
+                            <tr><td><input type="text" list="vheden" id="pgv"></td></tr> <!-- pgv: gevraagde vaardigheden-->
+                            <tr><td><button type="button">+</button></td></tr>
+                            <tr><td>Gevraagde skills</td></tr>
+                            <tr><td><input type="text" list="skills" id="pgs"></td></tr> <!-- pgs: gevraagde skils-->
+                            <tr><td><button type="button">+</button></td></tr>
+                            <tr><td>Functie omvang</td></tr>
+                            <tr><td>Fulltime</td><td><input type="radio" id="pdi" value="ftime"></td></tr> <!-- pdi: dienst-->
+                            <tr><td>Parttime</td><td><input type="radio" id="pdi" value="ptime"></td></tr> <!-- pdi: dienst-->
+                            <tr><td>Aantal uren</td><td><input type="number" min="0" max="100" step="1" value="20" id="pur"></td></tr> <!-- pur: uren-->
+                            <tr><td><button type="button">+</button></td></tr>
+                            <tr><td>Startdatum</td></tr> 
+                            <tr><td><input type="date" id="psd"></td></tr> <!-- psd: start datum-->
+                            <tr><td>Einddatum</td></tr>
+                            <tr><td><input type="date" id="ped"></td></tr> <!-- ped: eind datum-->
+                            <tr><td><button type="button">+</button></td></tr>
+                        </table>
+                    </div>
+            </div>
 				<button type="button">Bestand toevoegen</button><button id="psa">Opslaan</button> <!-- psa: save-->
 		</div>
 		<div class="bottom">

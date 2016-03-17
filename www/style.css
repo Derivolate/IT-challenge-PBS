@@ -14,6 +14,11 @@ body {
 	overflow-y: scroll; 
 }
 
+#login-screen
+{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
 
 .logos {
 	margin-left: 42%;

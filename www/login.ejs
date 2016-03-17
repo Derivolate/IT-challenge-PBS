@@ -8,36 +8,34 @@
 
         <% include partials/sidebar %>
 	
-        <div class="body">
-            <table>
-                <tr>
-                <td>Log hier in met uw gebruikersnaam en wachtwoord</td></tr>
-                <tr>
-                    <td>Gebruikersnaam:</td>
-                    <td><input type="text" id="username"></td>
-                </tr>
-                <tr>
-                    <td>Wachtwoord:</td>
-                    <td><input type="text" id="password"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="loginbtn" onclick="onLogin()">Log in</button>
-                    </td>
-                    <td>
-                        <button id="wwverg">Wachtwoord vergeten</button>
-                    </td>
-                    <td>
-                </tr>
-                <tr>
-                    <td>
-                        Nog geen account?
-                        <form action="register" class =>
-                            <input type="submit" value="Registreren">
-                        </form>
-                    </td>
-                </tr>
-            </table>
+        <div class="body" id="login-screen">
+            Log hier in met uw gebruikersnaam en wachtwoord
+			<br/>
+			<br/>
+			<table>
+				<tr><td>
+					<table>
+						<tr>
+							<td>Gebruikersnaam:</td>
+							<td><input type="text" id="username"></td>
+						</tr>
+						<tr>
+							<td>Wachtwoord:</td>
+							<td><input type="password" id="password"></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button id="loginbtn" class="pr" onclick="onLogin()">Log in</button>
+				</td></tr>
+			</table>
+			<br/>
+			<a href="forgotpassword" id="wwverg">Wachtwoord vergeten</a>
+			<br/><br/>
+			Nog geen account?
+			<form action="register">
+				<input type="submit" value="Registreren">
+			</form>
 			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
             <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
             <script>
@@ -49,8 +47,10 @@
                 }
 				
                 socket.on('login', function(userId) {
-					sessionStorage.setItem("userId", userId);
-					updateBtnText(true);
+					if (userId){
+						sessionStorage.setItem("userId", userId);
+					}
+					updateBtnText(userId);
                 });
 				socket.on('validate', function(sessionId){
 					sessionStorage.setItem("sessionId", sessionId);

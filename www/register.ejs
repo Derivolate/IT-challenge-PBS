@@ -8,36 +8,32 @@
 
         <% include partials/sidebar %>
 	
-        <div class="body">
-            <table>
-                <tr>
-                <td>Log hier in met uw gebruikersnaam en wachtwoord</td></tr>
-                <tr>
-                    <td>Gebruikersnaam:</td>
-                    <td><input type="text" id="username"></td>
-                </tr>
-                <tr>
-                    <td>Wachtwoord:</td>
-                    <td><input type="text" id="password"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="registerbtn" onclick="onRegister()">Registreer</button>
-                    </td>
-                    <td>
-                        <button id="wwverg">Wachtwoord vergeten</button>
-                    </td>
-                    <td>
-                </tr>
-                <tr>
-                    <td>
-                        Al een account?
-                        <form action="login" class =>
-                            <input type="submit" value="Inloggen">
-                        </form>
-                    </td>
-                </tr>
-            </table>
+        <div class="body" id="login-screen">
+            Kies een gebruikersnaam en wachtwoord
+			<br/>
+			<br/>
+			<table>
+				<tr><td>
+					<table>
+						<tr>
+							<td>Gebruikersnaam:</td>
+							<td><input type="text" id="username"></td>
+						</tr>
+						<tr>
+							<td>Wachtwoord:</td>
+							<td><input type="password" id="password"></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<button id="loginbtn" class="pr" onclick="onRegister()">Registreer</button>
+				</td></tr>
+			</table>
+			<br/>
+			Heef u al een account?
+			<form action="login">
+				<input type="submit" value="Log in">
+			</form>
 			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
             <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 			<script>
@@ -51,8 +47,26 @@
                 }
 				
                 socket.on('registreer', function(msg) {
-                    $('#username').val(msg);
+					if (msg){
+						alert("De registratie is voltooid.");
+					}
+					else{
+						alert("De gekozen gebruikersnaam is al in gebruik. Kies een andere gebruikersnaam en probeer opnieuw te registreren.");
+					}
+					
+					var credentials = {username:$('#username').val(), password:$('#password').val()};
+					socket.emit('login', credentials);
                 });
+				
+				socket.on('login', function(userId) {
+					if (userId){
+						sessionStorage.setItem("userId", userId);
+					}
+					updateBtnText(userId);
+                });
+				socket.on('validate', function(sessionId){
+					sessionStorage.setItem("sessionId", sessionId);
+				});
             </script>
         </div>
         <div class="bottom">

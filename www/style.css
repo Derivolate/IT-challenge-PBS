@@ -177,19 +177,24 @@ button:hover {
 }
 
 #suggestion:hover {
-	background-color: #EEEEEE;
+	background-color: #3A557D;
+	font-size: 19px;
+	font-weight: bold;
 }
 
 #resultitem{
-	width: 90%;
-	height: 60px;
+	width: 740px;
+	height: 100px;
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
+	
 	background-color: #DDDDDD;
+	color: #29446C;
 }
 
 #resultitem:hover{
 	background-color: #EEEEEE;
+	border: 1px solid rgba(0,0,0, 0.5);
 }
 
 .item {

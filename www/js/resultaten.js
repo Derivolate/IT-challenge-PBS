@@ -20,7 +20,7 @@
 					if (item >= 100) {
 						break;
 					}
-					results.append($('<button type="button" id="resultitem" class="pr">').text("id: " + msg[item].id + ", username:" + msg[item].id));
+					results.append($('<button type="button" id="resultitem" class="pr">').text("id: " + msg[item].id + ", username:" + msg[item].username));
 				}
 				results.append($('<tr>').text(msg.length + " records in totaal"));
               });
